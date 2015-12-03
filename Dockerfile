@@ -22,6 +22,9 @@ RUN useradd -d /hubot -m -s /bin/bash -U hubot
 USER    hubot
 WORKDIR /hubot
 
+# Install scripts
+ADD scripts /hubot/scripts
+
 # Install hubot
 RUN yo hubot --owner="James Carlos <james@learning.net>" --name="tlnbot" --description="tlnbot on Docker" --defaults
 
