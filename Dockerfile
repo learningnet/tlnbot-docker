@@ -25,11 +25,11 @@ WORKDIR /hubot
 # Install hubot
 RUN yo hubot --owner="James Carlos <james@learning.net>" --name="tlnbot" --description="tlnbot on Docker" --defaults
 
+# Install scripts
+ADD hubot-scripts.json hubot-scripts.json
+
 # Install slack adapter
 RUN npm install hubot-slack --save && npm install
-
-# Install scripts
-ADD scripts /hubot/scripts
 
 # Run hubot
 CMD bin/hubot -a slack
